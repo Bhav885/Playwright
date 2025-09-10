@@ -10,11 +10,11 @@ export default defineConfig({
 
   // Reporters
   reporter: [
-    ['html'],                      // built-in HTML report
-    // ['line'],                    // uncomment if you want CLI progress
-    // ['allure-playwright'],       // enable if you install Allure
-  ],
-
+ ['list'], // Console reporter
+ ['allure-playwright', {
+ outputFolder: 'allure-results',
+ }]
+ ],
   use: {
     baseURL: 'https://www.saucedemo.com/', // so you can use page.goto('/')
     trace: 'on-first-retry',               // collect trace on retry
